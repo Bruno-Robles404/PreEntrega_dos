@@ -1,0 +1,204 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+section {
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+nav {
+    background-color: #35304a;
+}
+
+/*---- NAV-BAR-----*/
+
+.nav-bar {
+    display: grid;  
+    grid-template-columns: 25% 75%;
+    grid-template-rows: 60px 60px ;
+    grid-template-areas: "brand-logo redes";  
+    justify-content: center;
+    align-content: center;
+}
+
+.redes{
+    grid-area: redes;
+}
+.brand-logo{
+    grid-area: brand-logo;
+}
+
+.brand-logo img{
+    width: 100px;
+    height: 100px;
+    border-radius: 150px;
+}
+.redes {
+    display: flex;
+}
+
+ .redes img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;    
+}
+
+
+/*---- MENU-----*/
+
+#menu {
+    background-color: #201b34;
+    display: grid;
+    grid-template-columns: repeat(4, 300px);
+    grid-template-rows: repeat(2, 300px);
+    justify-content: center;
+    align-content: center;
+    grid-template-areas:
+        "about shop contact cinematic"
+        "about motorcycle motorcycle cinematic"
+}
+
+#menu .tile {
+    height: 100%;
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+#menu .tile a {
+    text-decoration: none;
+}
+
+#menu .tile .front {
+    color: white;
+    background-color: black;
+    height: 100%;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    padding: 10px;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+#menu .about-tile .front {
+    background-image: url(imagenes/logo.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+#menu .contact-tile .front {
+    background-image: url(imagenes/contact.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+#menu .shop-tile .front {
+    background-image: url(imagenes/shop.jpeg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+#menu .motorcycle-tile .front {
+    background-image: url(imagenes/fondo4.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+#menu .cinematic-tile .front {
+    background-image: url(imagenes/video1.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+#menu .tile .back {
+    background-color: #35304a;
+    color: white;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    height: 100%;
+    font-weight: gold;
+    font-size: 28px;
+}
+
+#menu .tile:hover .front {
+    margin-top: -100%;
+}
+
+#menu .cinematic-tile:hover .front {
+    margin-top: -200%;
+}
+
+#menu .about-tile:hover .front {
+    margin-top: -200%;
+}
+
+#menu .motorcycle-tile:hover .front {
+    margin-top: -50%;
+}
+
+.about-tile {
+    grid-area: about;
+}
+
+.cinematic-tile {
+    grid-area: cinematic;
+}
+
+.motorcycle-tile {
+    grid-area: motorcycle;
+}
+
+/*-----SECTION ABOUT--------*/
+
+#about {
+    background-color: #35304a;
+    color:whitesmoke;   
+    justify-content: center;
+    align-content: center;
+
+}
+
+
+
+/* MEDIA QUERYS IPHONE 12PRO*/
+
+@media screen and (max-width: 390px) {
+    #menu {
+        background-color: #201b34;
+        display: grid;
+        grid-template-columns: repeat(2, 200px);
+        grid-template-rows: repeat(6, 200px);
+        justify-content: center;
+        align-content: center;
+        grid-template-areas:
+            "about shop "
+            "about contact"
+            "motorcycle cinematic"
+    }
+
+    #menu .tile .back {
+        font-size: 25px;
+    }
+
+    #menu .cinematic-tile:hover .front {
+        margin-top: -100%;
+    }
+
+    #menu .motorcycle-tile:hover .front {
+        margin-top: -100%;
+    }
+
+}
