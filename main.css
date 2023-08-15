@@ -610,17 +610,19 @@ footer {
     border-radius: 50px;
 }
 
-
-.imagen-fluid{
-    max-width: 100%;
-    height:auto;
-    
+.background {
+    width: 96%;
+    max-width: 960px;
+    margin: 0 auto;
 }
 
-.bg{
-    position: absolute;
-
+.background__shop-fondo{
+    width: 100%;
+    height: auto;
 }
+
+
+
 
 
 
