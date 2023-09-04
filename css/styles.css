@@ -315,7 +315,7 @@ g #menu .cinematic-tile:hover .front {
   transition: background-image 0.5s ease-in-out;
 }
 .container .card:hover .card__raven {
-  background-image: url(./imagenes/chaquetas/ravenback.jpg);
+  background-image: url(../imagenes/chaquetas/ravenback.jpg);
 }
 .container .card .card__jacket {
   height: 530px;
