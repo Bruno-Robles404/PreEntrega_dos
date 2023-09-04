@@ -179,7 +179,7 @@ footer {
 #menu .cinematic-tile {
   grid-area: cinematic;
 }
-g #menu .cinematic-tile:hover .front {
+#menu .cinematic-tile:hover .front {
   margin-top: -200%;
 }
 #menu .cinematic-tile .front {
