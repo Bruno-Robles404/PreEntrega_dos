@@ -269,7 +269,7 @@ footer {
         .front {
 
             background-size: strech;
-            background-image: url(/imagenes/iconos/logo.png);
+            background-image: url(./imagenes/iconos/logo.png);
             @include front ();
 
         }
@@ -286,7 +286,7 @@ footer {
         }
 
         .front {
-            background-image: url(/imagenes/menu/video1.jpeg);
+            background-image: url(./imagenes/menu/video1.jpeg);
             background-size: cover;
             @include front()
         }
@@ -303,7 +303,7 @@ footer {
         }
 
         .front {
-            background-image: url(/imagenes/menu/fondo4.jpg);
+            background-image: url(./imagenes/menu/fondo4.jpg);
             background-size: cover;
             @include front()
         }
@@ -315,7 +315,7 @@ footer {
 
         .front {
             background-size: cover;
-            background-image: url(/imagenes/menu/shop.jpeg);
+            background-image: url(./imagenes/menu/shop.jpeg);
             @include front()
         }
     }
@@ -325,7 +325,7 @@ footer {
 
         .front {
             background-size: cover;
-            background-image: url(/imagenes/menu/contact.jpg);
+            background-image: url(./imagenes/menu/contact.jpg);
             @include front()
         }
     }
@@ -404,81 +404,81 @@ footer {
 
         .card__shapper-nar {
             height: 530px;
-            background-image: url(/imagenes/remeras/shapper-nar.jpg);
+            background-image: url(./imagenes/remeras/shapper-nar.jpg);
             background-size: cover;
             transition: background-image 0.5s ease-in-o
         }
 
         &:hover {
             .card__shapper-nar {
-                background-image: url(/imagenes/remeras/shapperback.jpg);
+                background-image: url(./imagenes/remeras/shapperback.jpg);
             }
         }
 
         .card__motorcycle-neg {
             height: 530px;
-            background-image: url(/imagenes/remeras/motorcycle-neg.jpg);
+            background-image: url(./imagenes/remeras/motorcycle-neg.jpg);
             background-size: cover;
             transition: background-image 0.5s ease-in-out;
         }
 
         &:hover {
             .card__motorcycle-neg {
-                background-image: url(/imagenes/remeras/motorcycle-back.jpg);
+                background-image: url(./imagenes/remeras/motorcycle-back.jpg);
             }
         }
 
         .card__wild-nat {
             height: 530px;
-            background-image: url(/imagenes/remeras/wild-natural.jpg);
+            background-image: url(./imagenes/remeras/wild-natural.jpg);
             background-size: cover;
             transition: background-image 0.5s ease-in-out;
         }
 
         &:hover {
             .card__wild-nat {
-                background-image: url(/imagenes/remeras/wildback.jpg);
+                background-image: url(./imagenes/remeras/wildback.jpg);
             }
 
         }
 
         .card__kurt {
             height: 530px;
-            background-image: url(/imagenes/chaquetas/kutt.jpg);
+            background-image: url(./imagenes/chaquetas/kutt.jpg);
             background-size: cover;
             transition: background-image 0.5s ease-in-out;
         }
 
         &:hover {
             .card__kurt {
-                background-image: url(/imagenes/chaquetas/kuttback.jpeg);
+                background-image: url(./imagenes/chaquetas/kuttback.jpeg);
             }
 
         }
 
         .card__raven {
             height: 530px;
-            background-image: url(/imagenes/chaquetas/raven.jpg);
+            background-image: url(./imagenes/chaquetas/raven.jpg);
             background-size: cover;
             transition: background-image 0.5s ease-in-out;
         }
 
         &:hover {
             .card__raven {
-                background-image: url(/imagenes/chaquetas/ravenback.jpg);
+                background-image: url(./imagenes/chaquetas/ravenback.jpg);
             }
         }
 
         .card__jacket {
             height: 530px;
-            background-image: url(/imagenes/chaquetas/JACKET-1.jpg);
+            background-image: url(./imagenes/chaquetas/JACKET-1.jpg);
             background-size: cover;
             transition: background-image 0.5s ease-in-out;
         }
 
         &:hover {
             .card__jacket {
-                background-image: url(/imagenes/chaquetas/JACKET-2.jpg);
+                background-image: url(./imagenes/chaquetas/JACKET-2.jpg);
             }
 
 
