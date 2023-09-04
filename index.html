@@ -4,55 +4,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CustomMotorcycle</title>
-    <link rel="stylesheet" href="main.css">
+    <!-- META NAME DESCRIPTION -->
+    <meta name="description" content="Empresa dedicada a la personalizacion y venta de motocicletas e indumentaria">
+    <meta name="keywords" content="custom, tracker, brat style, shop">
+    <!-- TITULO -->
+    <title>CustomMotorcycles</title>
+    <!-- FAVICON -->
+    <link rel="icon" type="image/x-icon" href="/imagenes/iconos/logo.png">
+    <!--ESTILOS CSS-->
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
 
-    <header>
-        <!-- NAV-BAR -->
-        <nav class="nav-bar">
-            <div class="brand-logo">
-                <img src="imagenes/logo.png" alt="brand logo">
+    <header class="header">
+        <!-- BARRA DE NAVEGACION -->
+        <nav class="header__navbar">
+
+            <div class="navbar__brand">
+                <a class="brand__link" href="/index.html">
+                    <img class="brand__logo" src="imagenes/iconos/logo.png" alt="imagen del logo de la marca">
+                </a>
             </div>
-            <div class="redes">
-                <a href="#""><img src=" imagenes/face2.png" alt=""></a>
-                <a href="https://www.instagram.com/custom.motorcycles/"><img src="imagenes/insta.png" alt=""></a>
-                <a href="#gmaps"><img src="imagenes/gmaps.png" alt=""></a>
+            <div class="navbar__tile">
+                <h1 class="tile__h1 tile__h1--font-size">CustomMotorcycles</h1>
+            </div>
+            <div class="navbar__redes">
+
+                <a class="redes__link" href="#""><img class=" redes__icon" src="/imagenes/iconos/face2.png"
+                    alt="imagen del icono de facebook"></a>
+
+                <a class="redes__link" href="https://www.instagram.com/custom.motorcycles/"><img class="redes__icon"
+                        src="/imagenes/iconos/insta.png" alt="imagen del icono de instagram"></a>
+
+                <a class="redes__link" href="#gmaps"><img class="redes__icon" src="/imagenes/iconos/gmaps.png"
+                        alt="imagen del icono de google maps "></a>
             </div>
         </nav>
+
     </header>
 
     <!-- MENU -->
     <section id="menu">
         <div class="tile about-tile">
-            <a href="#about">
+            <a href="paginas/about.html">
                 <div class="front"> </div>
                 <div class="back"> ABOUT</div>
             </a>
         </div>
         <div class="tile shop-tile">
-            <a href="shop.html">
+            <a href="paginas/shop.html">
                 <div class="front"> </div>
                 <div class="back">SHOP</div>
             </a>
         </div>
         <div class="tile cinematic-tile">
-            <a href="cinematic.html">
+            <a href="paginas/cinematic.html">
                 <div class="front"> </div>
                 <div class="back">CINEMATIC</div>
             </a>
         </div>
         <div class="tile motorcycle-tile">
-            <a href="motorcycles.html">
+            <a href="paginas/motorcycles.html">
                 <div class="front"> </div>
                 <div class="back">MOTORCYCLE</div>
             </a>
         </div>
 
         <div class="tile contact-tile">
-            <a href="#contact">
+            <a href="paginas/contact.html">
                 <div class="front"> </div>
                 <div class="back">CONTACT</div>
             </a>
@@ -61,33 +81,43 @@
 
     <!--FOOTER -->
     <footer class="footer">
-        <figure class="footer-logo">
-            <a href="index.html"><img src="imagenes/logo.png" alt="brand logo"></a>
+        <figure class="footer__figure">
+            <a class="figure__link" href="index.html"><img class="figure__brand" src="imagenes/iconos/logo.png"
+                    alt="imagen del logo de la marca"></a>
         </figure>
-        <div class="footer-maps">
-            <h3>COMO LLEGAR A NUESTRO TALLER</h3>
-            <div>
-                <iframe id="gmaps"
+
+        <div class="footer__maps">
+            <h2 class="maps__tile">AQUI ESTAMOS</h2>
+            <div class="maps__google">
+                <iframe class="google__iframe" id="gmaps"
                     src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d14031.090689135792!2d-65.77283854999999!3d-28.4562684!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2sar!4v1690811718670!5m2!1ses!2sar"
-                    width="500" height="150" style="border:0;" allowfullscreen="" loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
-        <div class="footer-contact">
-            <h3><a href="#">CONTÁCTANOS</a></h3>
-            <p>
-                Nuestra inspiración fusiona el amor por las dos ruedas con el deseo de crear productos exclusivos.
+
+        <div class="footer__contact">
+            <a class="contact__link" href="paginas/contact.html">
+                <h2 class="contact__tile">CONTÁCTANOS</h2>
+            </a>
+            <p class="contact__paragraf">Nuestra inspiración fusiona el amor por las dos
+                ruedas con el deseo de crear productos exclusivos.
             </p>
-            <p> ¡CUATRO RUEDAS MUEVEN EL CUERPO... DOS RUEDAS MUEVEN EL ALMA!</p>
+            <p class="contact__paragraf">
+                ¡CUATRO RUEDAS MUEVEN EL CUERPO... DOS RUEDAS MUEVEN EL ALMA!
+            </p>
         </div>
-        <div class="footer-redes">
-            <h3>SÍGUENOS</h3>
-            <div class="redes-img">
-                <a href="#"><img src="imagenes/face2.png" alt=""></a>
-                <a href="https://www.instagram.com/custom.motorcycles/"><img src="imagenes/insta.png" alt=""></a>
-            </div>
+
+        <div class="footer__redes footer__redes--row">
+            <h2 class="redes__tile">SÍGUENOS</h2>
+
+            <a class="redes__link" href="#"><img class="redes__img" src="imagenes/iconos/face2.png"
+                    alt="imagen del icono de Facebook"></a>
+            <a class="redes__link" href="https://www.instagram.com/custom.motorcycles/"><img class="redes__img"
+                    src="imagenes/iconos/insta.png" alt="imagen del icono de Instagram"></a>
+
         </div>
     </footer>
+
 </body>
 
 </html>

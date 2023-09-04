@@ -1,0 +1,734 @@
+html,
+body {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+}
+
+/*VARIABLES*/
+/*PALETA DE COLORES*/
+$color-primary: #35304a;
+$color-secundary: whitesmoke;
+$color-tertiary: #201b34;
+/*BREAKPOINT*/
+$media-query: "(max-width: 991px)";
+
+/*MIXIM*/
+
+@mixin body-styles {
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+@mixin grid-styles {
+    display: grid;
+    grid-template-columns: 200px 700px 300px;
+    grid-template-rows: 150px;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    justify-items: center;
+    grid-template-areas:
+        "navbar__brand  navbar__tile  navbar__redes ";
+}
+
+
+@mixin flex-styles {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+@mixin icon-styles {
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+}
+
+@mixin footer-grid {
+    display: grid;
+    grid-template-columns: 200px 400px 400px 200px;
+    grid-template-rows: 300px;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    justify-items: center;
+    text-align: center;
+    grid-template-areas:
+        "footer__figure footer__maps footer__contact footer__redes";
+}
+
+@mixin figure-brand-style {
+    width: 120px;
+    height: 120px;
+    border-radius: 150px;
+}
+
+
+@mixin menu-styles {
+    padding: 50px;
+    background-color: $color-tertiary;
+    display: grid;
+    grid-template-columns: repeat(4, 300px);
+    grid-template-rows: repeat(2, 300px);
+    justify-content: center;
+    align-content: center;
+    grid-template-areas:
+        "about shop contact cinematic"
+        "about motorcycle motorcycle cinematic";
+}
+
+@mixin front {
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+
+/*PLANTILLA DE ESTEILOS*/
+
+body {
+    @include body-styles()
+}
+
+header {
+    background-color: $color-primary;
+}
+
+footer {
+    background-color: $color-primary;
+    color: $color-secundary;
+}
+
+
+/*HEADER*/
+
+.header__navbar {
+    @include grid-styles();
+ 
+    .navbar__brand {
+        grid-area: navbar__brand;
+
+        .brand__link {
+            .brand__logo {
+                width: 120px;
+                height: 120px;
+                border-radius: 150px;
+            }
+        }
+
+    }
+
+    .navbar__redes {
+
+        grid-area: navbar__redes;
+
+        @include flex-styles();
+
+        .redes__link {
+            padding: 5px;
+
+            .redes__icon {
+                @include icon-styles();
+            }
+        }
+    }
+
+    .navbar__tile {
+        grid-area: navbar__tile;
+
+        & .tile__h1 {
+            color: whitesmoke;
+            font-size: 40px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+
+    }
+
+    .navbar__menu {
+
+        .menu__list {
+            list-style: none;
+            
+        }
+
+        .menu__link {
+            color: whitesmoke;
+            padding: 10px;
+        }
+    }
+}
+
+/*FOOTER*/
+
+.footer {
+    @include footer-grid();
+
+    .footer__figure {
+        grid-area: footer__figure;
+
+        .figure__link {
+            .figure__brand {
+                @include figure-brand-style();
+            }
+        }
+    }
+
+
+
+    .footer__redes {
+        grid-area: footer__redes;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .redes__tile {
+            color: $color-secundary;
+        }
+
+        .redes__link {
+            padding: 10px;
+
+            .redes__img {
+                width: 50px;
+                height: 50px;
+                border-radius: 50px;
+            }
+        }
+    }
+
+    .footer__contact {
+        grid-area: footer__contact;
+
+        .contact__link {
+            .contact__tile {
+                color: whitesmoke;
+            }
+        }
+
+        .contact__paragraf {
+            padding: 0px 50px;
+        }
+    }
+
+}
+
+/*MENU*/
+
+#menu {
+    @include menu-styles();
+
+    .tile {
+        height: 100%;
+        overflow: hidden;
+        cursor: pointer;
+
+        &:hover {
+            .front {
+                margin-top: -100%;
+            }
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .back {
+            font-size: 40px;
+            background-color: #35304a;
+            color: white;
+            display: grid;
+            justify-items: center;
+            align-items: center;
+            height: 100%;
+        }
+
+        .front {
+            color: white;
+            background-color: black;
+            height: 100%;
+            display: grid;
+            justify-items: center;
+            align-items: center;
+            padding: 10px;
+            box-sizing: border-box;
+            transition: all 0.3s ease;
+        }
+    }
+
+    .about-tile {
+        grid-area: about;
+
+        &:hover {
+            .front {
+                margin-top: -200%;
+            }
+        }
+
+        .front {
+
+            background-size: strech;
+            background-image: url(/imagenes/iconos/logo.png);
+            @include front ();
+
+        }
+
+    }
+
+    .cinematic-tile {
+        grid-area: cinematic;
+
+        &:hover {
+            .front {
+                margin-top: -200%;
+            }
+        }
+
+        .front {
+            background-image: url(/imagenes/menu/video1.jpeg);
+            background-size: cover;
+            @include front()
+        }
+    }
+
+
+    .motorcycle-tile {
+        grid-area: motorcycle;
+
+        &:hover {
+            .front {
+                margin-top: -50%;
+            }
+        }
+
+        .front {
+            background-image: url(/imagenes/menu/fondo4.jpg);
+            background-size: cover;
+            @include front()
+        }
+
+    }
+
+    .shop-tile {
+        grid-area: shop;
+
+        .front {
+            background-size: cover;
+            background-image: url(/imagenes/menu/shop.jpeg);
+            @include front()
+        }
+    }
+
+    .contact-tile {
+        grid-area: contact;
+
+        .front {
+            background-size: cover;
+            background-image: url(/imagenes/menu/contact.jpg);
+            @include front()
+        }
+    }
+}
+
+/*CINEMATIC*/
+
+.background {
+
+    //esto va en el query
+    &--flex {
+        padding: 0;
+        display: flex;
+        height: 100vh;
+        align-items: center;
+        justify-content: center;
+        color: whitesmoke;
+        margin: auto;
+        text-align: center;
+    }
+
+    .background__video {
+        position: absolute;
+        top: 150;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+
+        .video__play {
+            min-width: 100%;
+            min-height: 100%;
+
+        }
+    }
+
+    .background__overlay {
+        min-width: 100%;
+        min-height: 100%;
+        position: absolute;
+        top: 150;
+        left: 0;
+        background: #303952;
+        z-index: 1;
+        opacity: .60;
+    }
+
+    .background__content {
+        z-index: 2;
+
+        .content__paragraph {
+            font-size: 50px;
+        }
+    }
+}
+
+/*SHOP*/
+
+.container {
+    padding: 20px 0px;
+
+    h2 {
+        font-size: 20px;
+    }
+
+    p {
+        font-size: 10px;
+    }
+
+    .container__h1 {
+        text-align: center;
+    }
+
+
+    .card {
+
+        .card__shapper-nar {
+            height: 530px;
+            background-image: url(/imagenes/remeras/shapper-nar.jpg);
+            background-size: cover;
+            transition: background-image 0.5s ease-in-o
+        }
+
+        &:hover {
+            .card__shapper-nar {
+                background-image: url(/imagenes/remeras/shapperback.jpg);
+            }
+        }
+
+        .card__motorcycle-neg {
+            height: 530px;
+            background-image: url(/imagenes/remeras/motorcycle-neg.jpg);
+            background-size: cover;
+            transition: background-image 0.5s ease-in-out;
+        }
+
+        &:hover {
+            .card__motorcycle-neg {
+                background-image: url(/imagenes/remeras/motorcycle-back.jpg);
+            }
+        }
+
+        .card__wild-nat {
+            height: 530px;
+            background-image: url(/imagenes/remeras/wild-natural.jpg);
+            background-size: cover;
+            transition: background-image 0.5s ease-in-out;
+        }
+
+        &:hover {
+            .card__wild-nat {
+                background-image: url(/imagenes/remeras/wildback.jpg);
+            }
+
+        }
+
+        .card__kurt {
+            height: 530px;
+            background-image: url(/imagenes/chaquetas/kutt.jpg);
+            background-size: cover;
+            transition: background-image 0.5s ease-in-out;
+        }
+
+        &:hover {
+            .card__kurt {
+                background-image: url(/imagenes/chaquetas/kuttback.jpeg);
+            }
+
+        }
+
+        .card__raven {
+            height: 530px;
+            background-image: url(/imagenes/chaquetas/raven.jpg);
+            background-size: cover;
+            transition: background-image 0.5s ease-in-out;
+        }
+
+        &:hover {
+            .card__raven {
+                background-image: url(/imagenes/chaquetas/ravenback.jpg);
+            }
+        }
+
+        .card__jacket {
+            height: 530px;
+            background-image: url(/imagenes/chaquetas/JACKET-1.jpg);
+            background-size: cover;
+            transition: background-image 0.5s ease-in-out;
+        }
+
+        &:hover {
+            .card__jacket {
+                background-image: url(/imagenes/chaquetas/JACKET-2.jpg);
+            }
+
+
+        }
+    }
+}
+
+/*MOTORCYCLES*/
+
+.galeria {
+    .galeria__tile {
+        font-size: 50px;
+        text-align: center;
+    }
+
+    .galeria__bikes {
+        padding: 20px;
+        display: grid;
+        grid-template-columns: repeat(3, 400px);
+        grid-template-rows: repeat(2, 350px);
+        justify-content: center;
+        justify-items: center;
+        text-align: center;
+        grid-template-areas:
+            "bikes__lord bikes__poseidon bikes__medusa"
+            "bikes__grindelwad bikes__bratback bikes__benelli"
+        ;
+    }
+
+
+    .galeria__bikes h2 {
+        padding-top: 15px;
+        font-size: 15px;
+    }
+
+    .galeria__bikes h3 {
+        font-size: 20px;
+    }
+}
+
+
+/*ABOUT*/
+.construccion {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+/*CONTACT*/
+.construccion {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+/*QUERYS*/
+
+@media #{$media-query} {
+    .header {
+        .header__navbar {
+            grid-template-columns: 390px;
+            grid-template-rows: 150px 60px 100px;
+            grid-template-areas:
+                "navbar__brand"
+                "navbar__tile"
+                "navbar__redes";
+        }
+
+        .navbar__brand {
+            grid-area: navbar__brand;
+        }
+
+        .navbar__redes {
+            grid-area: navbar__redes;
+        }
+
+        .navbar__tile {
+            grid-area: navbar__tile;
+        }
+    }
+
+
+    .tile__h1--font-size {
+        font-size: 35px;
+    }
+
+    .footer {
+        grid-template-columns: 390px;
+        grid-template-rows: 150px 220px 200px 250px;
+        grid-template-areas:
+            "footer__figure"
+            "footer__maps"
+            "footer__contact"
+            "footer__redes";
+    }
+
+
+    /* MENU INDEX */
+    #menu {
+        padding: 0px;
+        grid-template-columns: repeat(2, 190px);
+        grid-template-rows: repeat(4, 200px);
+        grid-template-areas:
+            "about cinematic"
+            "about  cinematic"
+            "motorcycle motorcycle"
+            "contact shop";
+    }
+
+    #menu .tile:hover .front {
+        margin-top: -50vh;
+    }
+
+    #menu .motorcycle-tile:hover .front {
+        margin-top: -53%;
+    }
+
+    #menu .about-tile:hover .front {
+        margin-top: -210%;
+    }
+
+    #menu .contact-tile:hover .front {
+        margin-top: -106%;
+    }
+
+    #menu .shop-tile:hover .front {
+        margin-top: -106%;
+    }
+
+    #menu .cinematic-tile:hover .front {
+        margin-top: -210%;
+    }
+
+    #menu .tile .back {
+        font-size: 30px;
+    }
+
+    /* CINEMATIC */
+    .heder {
+
+        .header__navbar {
+            grid-template-columns: 390px;
+            grid-template-rows: 150px;
+            grid-template-areas:
+                "navbar__brand"
+                "navbar__menu"
+                "navbar__redes";
+            ;
+
+            .navbar__menu {
+                .menu__list {
+                    padding: 0px;
+                    flex-direction: column;
+                    align-items: center;
+                }
+            }
+
+        }
+    }
+
+    .background {
+
+        &--flex {
+            padding: 0px;
+            display: flex;
+            height: 56vh;
+            align-items: center;
+            justify-content: center;
+            color: whitesmoke;
+            margin: auto;
+            text-align: center;
+        }
+
+        .background__video {
+            &--size {
+                height: 55vh;
+                width: 47vh;
+            }
+
+            .video__play {
+                &--size {
+                    min-width: 55vh;
+                    max-height: 55vh;
+                }
+
+            }
+        }
+
+        .background__content {
+
+            .content__paragraph {
+                font-size: 20px;
+                padding: 0px 20px 0px 20px;
+            }
+        }
+
+        .background__overlay {
+            min-width: 47vh;
+            min-height: 55vh;
+            position: absolute;
+            top: 1600;
+            left: 0px;
+            background: #303952;
+            z-index: 1;
+            opacity: .60;
+        }
+
+
+    }
+
+    .container {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+    /* MOTORCYCLES */
+    .galeria {
+        .galeria__bikes {
+            grid-template-columns: 390px;
+            grid-template-rows: repeat(6, 400px);
+            grid-template-areas:
+                "bikes__lord"
+                "bikes__poseidon"
+                "bikes__medusa"
+                "bikes__grindelwad "
+                "bikes__bratback "
+                "bikes__benelli";
+        }
+    }
+
+    /* SHOP */
+    .container h2 {
+        font-size: 18px;
+    }
+
+    .container p {
+        font-size: 14px;
+        justify-content: center;
+    }
+
+
+    /* ABOUT */
+    .construccion {
+        flex-direction: column;
+
+    }
+
+    /* CONTACT */
+    .construccion {
+        flex-direction: column;
+
+    }
+}
