@@ -172,7 +172,7 @@ footer {
 }
 #menu .about-tile .front {
   background-size: strech;
-  background-image: url(./imagenes/iconos/logo.png);
+  background-image: url(../imagenes/iconos/logo.png);
   background-repeat: no-repeat;
   background-position: center center;
 }
