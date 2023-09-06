@@ -104,7 +104,7 @@ footer {
 
 .header__navbar {
     @include grid-styles();
- 
+
     .navbar__brand {
         grid-area: navbar__brand;
 
@@ -150,7 +150,7 @@ footer {
 
         .menu__list {
             list-style: none;
-            
+            @include flex-styles()
         }
 
         .menu__link {
@@ -531,7 +531,7 @@ footer {
 .construccion {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    text-align: center;
 }
 
 /*QUERYS*/
@@ -540,7 +540,7 @@ footer {
     .header {
         .header__navbar {
             grid-template-columns: 390px;
-            grid-template-rows: 150px 60px 100px;
+            grid-template-rows: 150px 110px 100px;
             grid-template-areas:
                 "navbar__brand"
                 "navbar__tile"
@@ -558,11 +558,24 @@ footer {
         .navbar__tile {
             grid-area: navbar__tile;
         }
-    }
 
 
-    .tile__h1--font-size {
-        font-size: 35px;
+        .navbar__menu {
+
+            .menu__list {
+                padding-left: 0;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+
+
+        .tile__h1--font-size {
+            font-size: 35px;
+
+        }
+
     }
 
     .footer {
@@ -574,6 +587,7 @@ footer {
             "footer__contact"
             "footer__redes";
     }
+
 
 
     /* MENU INDEX */

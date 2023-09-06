@@ -69,6 +69,9 @@ footer {
 }
 .header__navbar .navbar__menu .menu__list {
   list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
 .header__navbar .navbar__menu .menu__link {
   color: whitesmoke;
@@ -361,14 +364,14 @@ footer {
 .construccion {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  text-align: center;
 }
 
 /*QUERYS*/
 @media (max-width: 991px) {
   .header .header__navbar {
     grid-template-columns: 390px;
-    grid-template-rows: 150px 60px 100px;
+    grid-template-rows: 150px 110px 100px;
     grid-template-areas: "navbar__brand" "navbar__tile" "navbar__redes";
   }
   .header .navbar__brand {
@@ -380,7 +383,13 @@ footer {
   .header .navbar__tile {
     grid-area: navbar__tile;
   }
-  .tile__h1--font-size {
+  .header .navbar__menu .menu__list {
+    padding-left: 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .header .tile__h1--font-size {
     font-size: 35px;
   }
   .footer {
