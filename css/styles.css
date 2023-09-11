@@ -1,7 +1,7 @@
 html,
 body {
-  max-width: 100% !important;
-  overflow-x: hidden !important;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 /*VARIABLES*/
@@ -43,19 +43,31 @@ footer {
   height: 120px;
   border-radius: 150px;
 }
+.header__navbar .navbar__brand:hover {
+  transform: scale(1.1, 1.1);
+  overflow: hidden;
+}
 .header__navbar .navbar__redes {
   grid-area: navbar__redes;
+}
+.header__navbar .navbar__redes .redes__list {
+  padding: 0%;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  list-style: none;
 }
-.header__navbar .navbar__redes .redes__link {
-  padding: 5px;
+.header__navbar .navbar__redes .redes__list .item__link {
+  padding: 10px;
 }
-.header__navbar .navbar__redes .redes__link .redes__icon {
+.header__navbar .navbar__redes .redes__list .item__link .item__icon {
   width: 50px;
   height: 50px;
   border-radius: 50px;
+}
+.header__navbar .navbar__redes .redes__list .item__link .item__icon:hover {
+  transform: scale(1.1, 1.1);
+  overflow: hidden;
 }
 .header__navbar .navbar__tile {
   grid-area: navbar__tile;
@@ -76,6 +88,12 @@ footer {
 .header__navbar .navbar__menu .menu__link {
   color: whitesmoke;
   padding: 10px;
+  text-decoration: none;
+  font-size: large;
+}
+.header__navbar .navbar__menu .menu__link:hover {
+  font-size: 18px;
+  font-weight: bold;
 }
 
 /*FOOTER*/
@@ -85,32 +103,45 @@ footer {
   grid-template-rows: 300px;
   justify-content: center;
   align-content: center;
-  align-items: center;
-  justify-items: center;
   text-align: center;
   grid-template-areas: "footer__figure footer__maps footer__contact footer__redes";
 }
 .footer .footer__figure {
   grid-area: footer__figure;
+  margin-top: 50px;
 }
 .footer .footer__figure .figure__link .figure__brand {
   width: 120px;
   height: 120px;
   border-radius: 150px;
 }
+.footer .footer__figure:hover {
+  transform: scale(1.1, 1.1);
+  overflow: hidden;
+}
 .footer .footer__redes {
   grid-area: footer__redes;
-  display: flex;
   flex-direction: column;
   align-items: center;
 }
 .footer .footer__redes .redes__tile {
   color: whitesmoke;
 }
-.footer .footer__redes .redes__link {
+.footer .footer__redes .redes__list {
+  display: flex;
+  flex-direction: row;
+}
+.footer .footer__redes .redes__list .list__item {
+  list-style: none;
+}
+.footer .footer__redes .redes__list .list__item:hover {
+  transform: scale(1.1, 1.1);
+  overflow: hidden;
+}
+.footer .footer__redes .redes__list .list__item .item__link {
   padding: 10px;
 }
-.footer .footer__redes .redes__link .redes__img {
+.footer .footer__redes .redes__list .list__item .item__link .item__img {
   width: 50px;
   height: 50px;
   border-radius: 50px;
@@ -118,11 +149,15 @@ footer {
 .footer .footer__contact {
   grid-area: footer__contact;
 }
+.footer .footer__contact .contact__link {
+  text-decoration: none;
+}
 .footer .footer__contact .contact__link .contact__tile {
   color: whitesmoke;
 }
 .footer .footer__contact .contact__paragraf {
-  padding: 0px 50px;
+  padding: 3px 50px;
+  margin: 0;
 }
 
 /*MENU*/
@@ -139,7 +174,6 @@ footer {
 #menu .tile {
   height: 100%;
   overflow: hidden;
-  cursor: pointer;
 }
 #menu .tile:hover .front {
   margin-top: -100%;
@@ -171,7 +205,7 @@ footer {
   grid-area: about;
 }
 #menu .about-tile:hover .front {
-  margin-top: -200%;
+  margin-top: 0%;
 }
 #menu .about-tile .front {
   background-size: strech;
@@ -214,6 +248,9 @@ footer {
 }
 #menu .contact-tile {
   grid-area: contact;
+}
+#menu .contact-tile:hover .front {
+  margin-top: 0%;
 }
 #menu .contact-tile .front {
   background-size: cover;
@@ -263,17 +300,33 @@ footer {
 }
 
 /*SHOP*/
+.shop {
+  display: grid;
+  grid-template-columns: 1200px;
+  grid-template-rows: 100px 200px;
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+  grid-template-areas: "shop__tile" "shop__paragraph";
+}
+.shop .shop__tile {
+  grid-area: shop__tile;
+}
+.shop .shop__paragraph {
+  grid-area: shop__paragraph;
+  font-size: large;
+}
+
 .container {
   padding: 20px 0px;
 }
 .container h2 {
   font-size: 20px;
+  padding-bottom: 10 px;
 }
 .container p {
-  font-size: 10px;
-}
-.container .container__h1 {
-  text-align: center;
+  font-size: 15px;
+  padding-inline: 2px;
 }
 .container .card .card__shapper-nar {
   height: 530px;
@@ -331,10 +384,25 @@ footer {
 }
 
 /*MOTORCYCLES*/
-.galeria .galeria__tile {
-  font-size: 50px;
+.section {
+  display: grid;
+  grid-template-columns: 1200px;
+  grid-template-rows: 130px 200px;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  grid-template-areas: "section__tile" "section__paragraph";
+}
+.section .section__tile {
+  grid-area: section__tile;
+  padding-top: 20px;
   text-align: center;
 }
+.section .section__paragrah {
+  grid-area: section__paragraph;
+  font-size: large;
+}
+
 .galeria .galeria__bikes {
   padding: 20px;
   display: grid;
@@ -353,29 +421,16 @@ footer {
   font-size: 20px;
 }
 
-/*ABOUT*/
-.construccion {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
-
-/*CONTACT*/
-.construccion {
-  display: flex;
-  flex-direction: row;
-  text-align: center;
-}
-
 /*QUERYS*/
 @media (max-width: 991px) {
   .header .header__navbar {
     grid-template-columns: 390px;
-    grid-template-rows: 150px 110px 100px;
+    grid-template-rows: 180px 120px 90px;
     grid-template-areas: "navbar__brand" "navbar__tile" "navbar__redes";
   }
   .header .navbar__brand {
     grid-area: navbar__brand;
+    margin-top: 20px;
   }
   .header .navbar__redes {
     grid-area: navbar__redes;
@@ -383,19 +438,40 @@ footer {
   .header .navbar__tile {
     grid-area: navbar__tile;
   }
+  .header .navbar__tile .tile__h1 {
+    font-size: 38px;
+  }
   .header .navbar__menu .menu__list {
     padding-left: 0;
     flex-direction: column;
     justify-content: center;
     align-items: center;
   }
+  .header .navbar__menu .menu__list .menu__item {
+    padding: 5px;
+    font-size: large;
+  }
   .header .tile__h1--font-size {
-    font-size: 35px;
+    font-size: 30px;
   }
   .footer {
     grid-template-columns: 390px;
-    grid-template-rows: 150px 220px 200px 250px;
+    grid-template-rows: 180px 230px 200px 160px;
+    justify-items: center;
+    align-items: center;
     grid-template-areas: "footer__figure" "footer__maps" "footer__contact" "footer__redes";
+  }
+  .footer .footer__figure {
+    margin-bottom: 0rem;
+  }
+  .footer .footer__redes {
+    justify-items: center;
+  }
+  .footer .footer__redes .redes__tile {
+    text-align: center;
+  }
+  .footer .footer__redes .redes__list {
+    padding: 0px;
   }
   /* MENU INDEX */
   #menu {
@@ -411,10 +487,10 @@ footer {
     margin-top: -53%;
   }
   #menu .about-tile:hover .front {
-    margin-top: -210%;
+    margin-top: 0%;
   }
   #menu .contact-tile:hover .front {
-    margin-top: -106%;
+    margin-top: 0%;
   }
   #menu .shop-tile:hover .front {
     margin-top: -106%;
@@ -473,26 +549,46 @@ footer {
     padding-right: 0px;
   }
   /* MOTORCYCLES */
+  .section {
+    grid-template-columns: 390px;
+    grid-template-rows: 160px 300px;
+  }
+  .section .section__tile {
+    padding-top: 20px;
+    text-align: center;
+  }
+  .section .section__paragraph {
+    padding-right: 20px;
+    padding-left: 20px;
+    text-align: justify;
+  }
   .galeria .galeria__bikes {
     grid-template-columns: 390px;
     grid-template-rows: repeat(6, 400px);
     grid-template-areas: "bikes__lord" "bikes__poseidon" "bikes__medusa" "bikes__grindelwad " "bikes__bratback " "bikes__benelli";
   }
   /* SHOP */
+  .shop {
+    display: grid;
+    grid-template-columns: 390px;
+    grid-template-rows: 180px 450px;
+    grid-template-areas: "shop__tile" "shop__paragraph";
+  }
+  .shop .shop__tile {
+    grid-area: shop__tile;
+  }
+  .shop .shop__paragraph {
+    grid-area: shop__paragraph;
+    text-align: justify;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
   .container h2 {
     font-size: 18px;
   }
   .container p {
     font-size: 14px;
     justify-content: center;
-  }
-  /* ABOUT */
-  .construccion {
-    flex-direction: column;
-  }
-  /* CONTACT */
-  .construccion {
-    flex-direction: column;
   }
 }
 

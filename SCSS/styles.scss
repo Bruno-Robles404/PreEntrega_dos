@@ -1,7 +1,7 @@
 html,
 body {
-    max-width: 100% !important;
-    overflow-x: hidden !important;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 /*VARIABLES*/
@@ -51,8 +51,6 @@ $media-query: "(max-width: 991px)";
     grid-template-rows: 300px;
     justify-content: center;
     align-content: center;
-    align-items: center;
-    justify-items: center;
     text-align: center;
     grid-template-areas:
         "footer__figure footer__maps footer__contact footer__redes";
@@ -109,11 +107,18 @@ footer {
         grid-area: navbar__brand;
 
         .brand__link {
+
             .brand__logo {
                 width: 120px;
                 height: 120px;
                 border-radius: 150px;
             }
+
+        }
+
+        &:hover {
+            transform: scale(1.1, 1.1);
+            overflow: hidden;
         }
 
     }
@@ -122,13 +127,23 @@ footer {
 
         grid-area: navbar__redes;
 
-        @include flex-styles();
 
-        .redes__link {
-            padding: 5px;
+        .redes__list {
+            padding: 0%;
+            @include flex-styles();
+            list-style: none;
 
-            .redes__icon {
-                @include icon-styles();
+            .item__link {
+                padding: 10px;
+
+                .item__icon {
+                    @include icon-styles();
+
+                    &:hover {
+                        transform: scale(1.1, 1.1);
+                        overflow: hidden;
+                    }
+                }
             }
         }
     }
@@ -150,12 +165,21 @@ footer {
 
         .menu__list {
             list-style: none;
-            @include flex-styles()
+            @include flex-styles();
         }
 
         .menu__link {
             color: whitesmoke;
             padding: 10px;
+            text-decoration: none;
+            font-size: large;
+
+            &:hover {
+                font-size: 18px;
+                font-weight: bold;
+
+            }
+
         }
     }
 }
@@ -167,19 +191,24 @@ footer {
 
     .footer__figure {
         grid-area: footer__figure;
+        margin-top: 50px;
 
         .figure__link {
+
             .figure__brand {
                 @include figure-brand-style();
             }
         }
+
+        &:hover {
+            transform: scale(1.1, 1.1);
+            overflow: hidden;
+        }
+
     }
-
-
 
     .footer__redes {
         grid-area: footer__redes;
-        display: flex;
         flex-direction: column;
         align-items: center;
 
@@ -187,13 +216,29 @@ footer {
             color: $color-secundary;
         }
 
-        .redes__link {
-            padding: 10px;
 
-            .redes__img {
-                width: 50px;
-                height: 50px;
-                border-radius: 50px;
+        .redes__list {
+            display: flex;
+            flex-direction: row;
+
+            .list__item {
+                list-style: none;
+
+                &:hover {
+                    transform: scale(1.1, 1.1);
+                    overflow: hidden;
+                }
+
+                .item__link {
+                    padding: 10px;
+
+
+                    .item__img {
+                        width: 50px;
+                        height: 50px;
+                        border-radius: 50px;
+                    }
+                }
             }
         }
     }
@@ -201,14 +246,18 @@ footer {
     .footer__contact {
         grid-area: footer__contact;
 
+
         .contact__link {
+            text-decoration: none;
+
             .contact__tile {
                 color: whitesmoke;
             }
         }
 
         .contact__paragraf {
-            padding: 0px 50px;
+            padding: 3px 50px;
+            margin: 0;
         }
     }
 
@@ -222,7 +271,6 @@ footer {
     .tile {
         height: 100%;
         overflow: hidden;
-        cursor: pointer;
 
         &:hover {
             .front {
@@ -262,7 +310,7 @@ footer {
 
         &:hover {
             .front {
-                margin-top: -200%;
+                margin-top: 0%;
             }
         }
 
@@ -291,7 +339,6 @@ footer {
             @include front()
         }
     }
-
 
     .motorcycle-tile {
         grid-area: motorcycle;
@@ -322,6 +369,12 @@ footer {
 
     .contact-tile {
         grid-area: contact;
+
+        &:hover {
+            .front {
+                margin-top: 0%;
+            }
+        }
 
         .front {
             background-size: cover;
@@ -384,21 +437,41 @@ footer {
 
 /*SHOP*/
 
+.shop {
+    display: grid;
+    grid-template-columns: 1200px;
+    grid-template-rows: 100px 200px;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    grid-template-areas: "shop__tile"
+        "shop__paragraph";
+
+    .shop__tile {
+        grid-area: shop__tile;
+    }
+
+    .shop__paragraph {
+        grid-area: shop__paragraph;
+        font-size: large;
+    }
+
+}
+
+
 .container {
     padding: 20px 0px;
 
     h2 {
         font-size: 20px;
+        padding-bottom: 10 px;
     }
 
     p {
-        font-size: 10px;
-    }
+        font-size: 15px;
+        padding-inline: 2px;
 
-    .container__h1 {
-        text-align: center;
     }
-
 
     .card {
 
@@ -480,19 +553,37 @@ footer {
             .card__jacket {
                 background-image: url(../imagenes/chaquetas/JACKET-2.jpg);
             }
-
-
         }
+
     }
 }
 
 /*MOTORCYCLES*/
 
-.galeria {
-    .galeria__tile {
-        font-size: 50px;
+.section {
+    display: grid;
+    grid-template-columns: 1200px;
+    grid-template-rows: 130px 200px;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    grid-template-areas:
+        "section__tile"
+        "section__paragraph";
+
+    .section__tile {
+        grid-area: section__tile;
+        padding-top: 20px;
         text-align: center;
     }
+
+    .section__paragrah {
+        grid-area: section__paragraph;
+        font-size: large;
+    }
+}
+
+.galeria {
 
     .galeria__bikes {
         padding: 20px;
@@ -508,7 +599,6 @@ footer {
         ;
     }
 
-
     .galeria__bikes h2 {
         padding-top: 15px;
         font-size: 15px;
@@ -520,27 +610,16 @@ footer {
 }
 
 
-/*ABOUT*/
-.construccion {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
-
-/*CONTACT*/
-.construccion {
-    display: flex;
-    flex-direction: row;
-    text-align: center;
-}
 
 /*QUERYS*/
 
 @media #{$media-query} {
+
     .header {
+
         .header__navbar {
             grid-template-columns: 390px;
-            grid-template-rows: 150px 110px 100px;
+            grid-template-rows: 180px 120px 90px;
             grid-template-areas:
                 "navbar__brand"
                 "navbar__tile"
@@ -549,6 +628,7 @@ footer {
 
         .navbar__brand {
             grid-area: navbar__brand;
+            margin-top: 20px;
         }
 
         .navbar__redes {
@@ -557,8 +637,11 @@ footer {
 
         .navbar__tile {
             grid-area: navbar__tile;
-        }
 
+            .tile__h1 {
+                font-size: 38px;
+            }
+        }
 
         .navbar__menu {
 
@@ -567,12 +650,16 @@ footer {
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
+
+                .menu__item {
+                    padding: 5px;
+                    font-size: large;
+                }
             }
         }
 
-
         .tile__h1--font-size {
-            font-size: 35px;
+            font-size: 30px;
 
         }
 
@@ -580,14 +667,31 @@ footer {
 
     .footer {
         grid-template-columns: 390px;
-        grid-template-rows: 150px 220px 200px 250px;
+        grid-template-rows: 180px 230px 200px 160px;
+        justify-items: center;
+        align-items: center;
         grid-template-areas:
             "footer__figure"
             "footer__maps"
             "footer__contact"
             "footer__redes";
-    }
 
+        .footer__figure {
+            margin-bottom: 0rem;
+        }
+
+        .footer__redes {
+            justify-items: center;
+
+            .redes__tile {
+                text-align: center;
+            }
+
+            .redes__list {
+                padding: 0px;
+            }
+        }
+    }
 
 
     /* MENU INDEX */
@@ -611,11 +715,11 @@ footer {
     }
 
     #menu .about-tile:hover .front {
-        margin-top: -210%;
+        margin-top: 0%;
     }
 
     #menu .contact-tile:hover .front {
-        margin-top: -106%;
+        margin-top: 0%;
     }
 
     #menu .shop-tile:hover .front {
@@ -643,13 +747,13 @@ footer {
             ;
 
             .navbar__menu {
+
                 .menu__list {
                     padding: 0px;
                     flex-direction: column;
                     align-items: center;
                 }
             }
-
         }
     }
 
@@ -700,7 +804,6 @@ footer {
             opacity: .60;
         }
 
-
     }
 
     .container {
@@ -709,6 +812,24 @@ footer {
     }
 
     /* MOTORCYCLES */
+
+    .section {
+        grid-template-columns: 390px;
+        grid-template-rows: 160px 300px;
+
+        .section__tile {
+            padding-top: 20px;
+            text-align: center;
+
+        }
+
+        .section__paragraph {
+            padding-right: 20px;
+            padding-left: 20px;
+            text-align: justify;
+        }
+    }
+
     .galeria {
         .galeria__bikes {
             grid-template-columns: 390px;
@@ -724,6 +845,31 @@ footer {
     }
 
     /* SHOP */
+
+    .shop {
+        display: grid;
+        grid-template-columns: 390px;
+        grid-template-rows: 180px 450px;
+
+        grid-template-areas:
+            "shop__tile"
+            "shop__paragraph";
+
+        .shop__tile {
+            grid-area: shop__tile;
+        }
+
+        .shop__paragraph {
+            grid-area: shop__paragraph;
+            text-align: justify;
+            padding-left: 20px;
+            padding-right: 20px;
+
+        }
+
+    }
+
+
     .container h2 {
         font-size: 18px;
     }
@@ -733,16 +879,4 @@ footer {
         justify-content: center;
     }
 
-
-    /* ABOUT */
-    .construccion {
-        flex-direction: column;
-
-    }
-
-    /* CONTACT */
-    .construccion {
-        flex-direction: column;
-
-    }
 }
