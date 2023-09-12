@@ -97,6 +97,9 @@ footer {
     color: $color-secundary;
 }
 
+main {
+    background-color: $color-tertiary;
+}
 
 /*HEADER*/
 
@@ -190,7 +193,7 @@ footer {
     @include footer-grid();
     padding-top: 20px;
 
-    h2{
+    h2 {
         font-size: 20px;
     }
 
@@ -283,7 +286,7 @@ footer {
             }
         }
 
-        a {
+        .card a {
             text-decoration: none;
         }
 
@@ -453,15 +456,19 @@ footer {
 
     .shop__tile {
         grid-area: shop__tile;
+        color: $color-secundary;
     }
 
     .shop__paragraph {
         grid-area: shop__paragraph;
         font-size: large;
+        color: $color-secundary;
     }
 
 }
-
+.row{
+    padding: 10px;
+}
 
 .container {
     padding: 20px 0px;
@@ -579,11 +586,16 @@ footer {
         grid-area: section__tile;
         padding-top: 20px;
         text-align: center;
+        color: $color-secundary;
     }
 
     .section__paragrah {
         grid-area: section__paragraph;
         font-size: large;
+    }
+
+    p {
+        color: $color-secundary;
     }
 }
 
@@ -858,6 +870,9 @@ footer {
 
     /* SHOP */
 
+   .row{
+    gap: 10px;
+   }
     .shop {
         display: grid;
         grid-template-columns: 390px;

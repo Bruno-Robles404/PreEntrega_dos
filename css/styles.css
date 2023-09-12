@@ -24,6 +24,10 @@ footer {
   color: whitesmoke;
 }
 
+main {
+  background-color: #201b34;
+}
+
 /*HEADER*/
 .header__navbar {
   display: grid;
@@ -182,7 +186,7 @@ footer {
 #menu .tile:hover .front {
   margin-top: -100%;
 }
-#menu .tile a {
+#menu .tile .card a {
   text-decoration: none;
 }
 #menu .tile .back {
@@ -315,10 +319,16 @@ footer {
 }
 .shop .shop__tile {
   grid-area: shop__tile;
+  color: whitesmoke;
 }
 .shop .shop__paragraph {
   grid-area: shop__paragraph;
   font-size: large;
+  color: whitesmoke;
+}
+
+.row {
+  padding: 10px;
 }
 
 .container {
@@ -401,10 +411,14 @@ footer {
   grid-area: section__tile;
   padding-top: 20px;
   text-align: center;
+  color: whitesmoke;
 }
 .section .section__paragrah {
   grid-area: section__paragraph;
   font-size: large;
+}
+.section p {
+  color: whitesmoke;
 }
 
 .galeria .galeria__bikes {
@@ -577,6 +591,9 @@ footer {
     grid-template-areas: "bikes__lord" "bikes__poseidon" "bikes__medusa" "bikes__grindelwad " "bikes__bratback " "bikes__benelli";
   }
   /* SHOP */
+  .row {
+    gap: 10px;
+  }
   .shop {
     display: grid;
     grid-template-columns: 390px;
