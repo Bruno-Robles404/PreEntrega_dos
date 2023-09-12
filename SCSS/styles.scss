@@ -82,7 +82,7 @@ $media-query: "(max-width: 991px)";
 }
 
 
-/*PLANTILLA DE ESTEILOS*/
+/*PLANTILLA DE ESTILOS*/
 
 body {
     @include body-styles()
@@ -152,7 +152,7 @@ footer {
         grid-area: navbar__tile;
 
         & .tile__h1 {
-            color: whitesmoke;
+            color: $color-secundary;
             font-size: 40px;
             display: flex;
             flex-direction: row;
@@ -169,7 +169,7 @@ footer {
         }
 
         .menu__link {
-            color: whitesmoke;
+            color: $color-secundary;
             padding: 10px;
             text-decoration: none;
             font-size: large;
@@ -188,6 +188,11 @@ footer {
 
 .footer {
     @include footer-grid();
+    padding-top: 20px;
+
+    h2{
+        font-size: 20px;
+    }
 
     .footer__figure {
         grid-area: footer__figure;
@@ -251,7 +256,7 @@ footer {
             text-decoration: none;
 
             .contact__tile {
-                color: whitesmoke;
+                color: $color-secundary;
             }
         }
 
@@ -284,8 +289,8 @@ footer {
 
         .back {
             font-size: 40px;
-            background-color: #35304a;
-            color: white;
+            background-color: $color-primary;
+            color: $color-secundary;
             display: grid;
             justify-items: center;
             align-items: center;
@@ -293,7 +298,7 @@ footer {
         }
 
         .front {
-            color: white;
+            color: $color-secundary;
             background-color: black;
             height: 100%;
             display: grid;
@@ -388,14 +393,13 @@ footer {
 
 .background {
 
-    //esto va en el query
     &--flex {
         padding: 0;
         display: flex;
         height: 100vh;
         align-items: center;
         justify-content: center;
-        color: whitesmoke;
+        color: $color-secundary;
         margin: auto;
         text-align: center;
     }
@@ -610,6 +614,15 @@ footer {
 }
 
 
+/*404*/
+.not-found {
+
+    .not-found__img {
+        width: 100%;
+    }
+
+}
+
 
 /*QUERYS*/
 
@@ -662,7 +675,6 @@ footer {
             font-size: 30px;
 
         }
-
     }
 
     .footer {
@@ -765,7 +777,7 @@ footer {
             height: 56vh;
             align-items: center;
             justify-content: center;
-            color: whitesmoke;
+            color: $color-secundary;
             margin: auto;
             text-align: center;
         }
@@ -866,9 +878,7 @@ footer {
             padding-right: 20px;
 
         }
-
     }
-
 
     .container h2 {
         font-size: 18px;
